@@ -1,0 +1,35 @@
+div#containerDiv {
+  margin: 10%;
+  border: solid rgb(161, 197, 201) 3px;
+  border-radius: 10px;
+  background-color: rgb(223, 234, 235);
+}
+
+div#containerDiv > p {
+  margin: 20px;
+  font-weight: 900;
+  font-size: 2em;
+}
+
+div#containerDiv > div#rpcTypeControl {
+  margin: 20px;
+  font-size: 1.5em;
+}
+
+div#containerDiv > div#rpcTypeControl > div#radioSelection {
+  display: flex;
+  flex-direction: column;
+}
+
+div#containerDiv > div#rpcTypeControl > div#radioSelection > label.radio {
+  margin-top: 5px;
+  margin-left: 0px;
+}
+
+div#containerDiv > div#rpcTypeControl > div#customParams > input.customInput {
+  margin-top: 20px;
+}
+
+div#containerDiv > div#rpcTypeControl > div#customParams > input#customInputApply {
+  width: 20%;
+}
