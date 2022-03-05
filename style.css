@@ -26,10 +26,15 @@ div#containerDiv > div#rpcTypeControl > div#radioSelection > label.radio {
   margin-left: 0px;
 }
 
+div#containerDiv > div#rpcTypeControl > div#customParams {
+  display: none;
+}
+
 div#containerDiv > div#rpcTypeControl > div#customParams > input.customInput {
   margin-top: 20px;
 }
 
-div#containerDiv > div#rpcTypeControl > div#customParams > input#customInputApply {
+div#containerDiv > div#rpcTypeControl > input#customInputApply {
+  margin-top: 20px;
   width: 20%;
 }

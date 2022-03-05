@@ -11,7 +11,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "electron:start": "electron .",
+    "electron:start": "vite build && electron .",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make"

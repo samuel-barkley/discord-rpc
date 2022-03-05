@@ -1,30 +1,48 @@
 import './node_modules/bulma/css/bulma.css';
 import './style.css';
-import { RPC } from "discord-rpc-electron";
-/*const client = require('discord-rich-presence')('942539056401756192');
- 
-client.updatePresence({
-  //state: 'Tired',
-  details: 'Doin absolutely nothin 😑',
-  //startTimestamp: Date.now(),
-  //endTimestamp: Date.now() + 13370,
-  largeImageKey: 'snek_large',
-  smallImageKey: 'snek_small',
-  //instance: true,
-});*/
-console.log("BRUH");
 
-const clientId = "942539056401756192";
-const scopes = ['rpc', 'rpc.api', 'messages.read'];
+//window.discordRPC.setTitle("bruh")
 
-const client = new RPC.Client({ transport: 'websocket' });
+let appleMusicLabelElem = document.getElementById("appleMusicLabel");
+let customLabelElem = document.getElementById("customLabel");
+let customParamsElem = document.getElementById("customParams");
+let applyButtonElem = document.getElementById("customInputApply");
 
-client.on('ready', () => {
-  console.log('Logged in as', client.application.name);
-  console.log('Authed for user', client.user.username);
-});
+// Input elements
+let stateElem = document.getElementById("customInputState");
+let detailElem = document.getElementById("customInputDetails");
+let imageLElem = document.getElementById("customInputImageBig");
+let imageSElem = document.getElementById("customInputImageSmall");
 
-client.login({ clientId, scopes });
+// Setting click listeners
+appleMusicLabelElem.onclick = () => radioChoice(0);
+customLabelElem.onclick = () => radioChoice(1);
+applyButtonElem.onclick = () => updatePresence();
 
-let customParamsElem = document.getElementById("containerDiv");
+let rpcState = "";
+let rpcDetail = "";
+let rpcImageL = "";
+let rpcImageS = "";
 
+// Setting change listeners
+stateElem.onchange = () => rpcState = stateElem.value;
+detailElem.onchange = () => rpcDetail = detailElem.value;
+imageLElem.onchange = () => rpcImageL = imageLElem.value;
+imageSElem.onchange = () => rpcImageS = imageSElem.value;
+
+
+function radioChoice(choice) {
+  if (choice == 0) {
+    customParamsElem.style.display = "none";
+  } else if (choice == 1) {
+    customParamsElem.style.display = "initial";
+  }
+}
+
+function updatePresence() {
+  console.log(rpcState);
+  console.log(rpcDetail);
+  console.log(rpcImageL);
+  console.log(rpcImageS);
+  window.discordRPC.updatePresence(rpcState, rpcDetail, rpcImageL, rpcImageS)
+}

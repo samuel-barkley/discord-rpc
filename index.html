@@ -13,12 +13,12 @@
     <p>What would you like to use as rpc?</p>
     <div id="rpcTypeControl">
       <div id="radioSelection">
-        <label class="radio" (click)="radioChoice(0)">
-          <input type="radio" name="answer">
+        <label class="radio disabled" disabled>
+          <input title="Doesn't work yet" type="radio" name="answer" id="appleMusicLabel">
           Apple music
         </label>
-        <label class="radio" (click)="radioChoice(1)">
-          <input type="radio" name="answer">
+        <label class="radio">
+          <input type="radio" name="answer" id="customLabel">
           Custom
         </label>
       </div>
@@ -27,8 +27,8 @@
         <input class="input customInput" type="text" placeholder="Details" id="customInputDetails">
         <input class="input customInput" type="text" placeholder="Image name (big)" id="customInputImageBig">
         <input class="input customInput" type="text" placeholder="Image name (small)" id="customInputImageSmall">
-        <input class="button customInput" type="button" value="Apply" id="customInputApply">
       </div>
+      <input class="button customInput" type="button" value="Apply" id="customInputApply">
     </div>
   </div>
   <script type="module" src="/index.js"></script>
